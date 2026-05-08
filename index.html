@@ -519,9 +519,7 @@ function buildUI(){
         <div class="warmup-body" id="wbody-${di}">
           <div class="warmup-rule"><strong>The rule:</strong> Warm-up sets are NOT working sets — don't count them, don't push hard. Their job is to groove the movement and prepare the joint. <strong>Only warm up on the first exercise per muscle group.</strong></div>
           <div class="warmup-sets">
-            <div class="warmup-row"><div class="warmup-dot" style="background:#4b5563"></div><div class="warmup-row-label">Warm-Up 1</div><div class="warmup-row-desc">50% of working weight · 8 reps · easy, just moving</div></div>
-            <div class="warmup-row"><div class="warmup-dot" style="background:#6b7280"></div><div class="warmup-row-label">Warm-Up 2</div><div class="warmup-row-desc">70% of working weight · 5 reps · moderate pace</div></div>
-            <div class="warmup-row"><div class="warmup-dot" style="background:#9ca3af"></div><div class="warmup-row-label">Warm-Up 3</div><div class="warmup-row-desc">85–90% of working weight · 2–3 reps · feel the weight</div></div>
+            <div class="warmup-row"><div class="warmup-dot" style="background:#6b7280"></div><div class="warmup-row-label">Warm-Up</div><div class="warmup-row-desc">50–60% of working weight · 10–12 reps · easy, just moving</div></div>
             <div class="warmup-row" style="margin-top:4px;padding-top:10px;border-top:1px solid var(--border)">
               <div class="warmup-dot" style="background:${day.color}"></div>
               <div class="warmup-row-label" style="color:var(--text)">→ Set 1</div>
@@ -562,11 +560,9 @@ function renderExercises(di){
       const isDone=completed[di][si].has(ei);
       const chipsHtml=sets.map(s=>`<div class="set-chip ${s.cls}"><span class="chip-label">${s.label}</span>${s.text}</div>`).join('');
       const warmupHtml=ex.warmup?`
-        <div class="warmup-section-label">Warm-up sets (not counted)</div>
+        <div class="warmup-section-label">Warm-up set (not counted)</div>
         <div class="ex-sets" style="margin-bottom:8px">
-          <div class="set-chip chip-warmup"><span class="chip-label">Warm-Up 1</span>50% × 8 reps</div>
-          <div class="set-chip chip-warmup"><span class="chip-label">Warm-Up 2</span>70% × 5 reps</div>
-          <div class="set-chip chip-warmup"><span class="chip-label">Warm-Up 3</span>85–90% × 2–3 reps</div>
+          <div class="set-chip chip-warmup"><span class="chip-label">Warm-Up</span>50–60% × 10–12 reps</div>
         </div>
         <div class="warmup-section-label">Working sets (to failure)</div>
       `:'';
